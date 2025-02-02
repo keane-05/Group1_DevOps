@@ -1,23 +1,26 @@
 import React from 'react'
 import {Text, Pressable, StyleSheet, View} from "react-native"
 import { Image } from 'expo-image'
-import { Redirect, useLocalSearchParams,  useRouter} from "expo-router"
+import { useLocalSearchParams,  useRouter} from "expo-router"
 import { drinks } from './(tabs)/card'
 import Button from '@/components/buttons'
-import Card from '@/components/card'
 
 export default function Info() { 
 
-
-  const router = useRouter(); // Use expo-router's navigation functions
+  const { id } = useLocalSearchParams();
+  const drink = drinks.find(d => d.id === Number(id));  // Find the matching drink
+  const router = useRouter(); 
 
   const changePage = () => {
-    router.push("/payment"); // Navigate to the "/about" route
+    router.push({
+      pathname: "/payment",
+      params: {id: id}
+    }); 
+
   };
 
 
-    const { id } = useLocalSearchParams();
-    const drink = drinks.find(d => d.id === Number(id));  // Find the matching drink
+   
 
   if (!drink) {
     return <Text style={styles.error}>Drink not found!</Text>;
