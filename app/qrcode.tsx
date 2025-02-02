@@ -27,8 +27,8 @@ export default function qrCode() {
     console.log("storeOrder function called with data:", orderData);
     try {
       // Store the order in Firebase
-      const newOrderRef = push(ref(database, "orders/"), orderData);
-      console.log("Order Confirmed! Firebase key:", newOrderRef.key);
+      await set(ref(database, `orders/${orderId}`), orderData);
+      console.log("Order Confirmed! Firebase key:", orderId);
     } catch (error) {
       console.log("Error: Could not send order details:", error);
     }
