@@ -20,6 +20,7 @@ export default function qrCode() {
     order_id: orderId,
     drink_id: id,
     order_time: orderTime,
+    redeem_status: "false"
     }
 
   // Async function for storing order data in Firebase
