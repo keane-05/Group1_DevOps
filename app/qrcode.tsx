@@ -40,7 +40,7 @@ export default function qrCode() {
   }, []); // Empty dependency array means it runs only once after the initial render
     return (
             <View style={{ alignItems: "center", justifyContent: "center", margin: 20 }}>
-              <QRCode value={JSON.stringify(orderData)} size={200} />
+              <QRCode value={JSON.stringify(orderData)} size={300} />
             </View>
     )
 
