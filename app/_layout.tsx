@@ -52,7 +52,17 @@ export default function RootLayout() {
         headerTintColor: "#fff",
       }}
       />
-      
+    
+    <Stack.Screen
+      name = "unusedQrPage"
+      options={{
+        headerTitle: "QR Code", 
+        headerStyle: {
+          backgroundColor: "#25292e",
+        }, 
+        headerTintColor: "#fff",
+      }}
+      />
     </Stack>
     </>
   );
