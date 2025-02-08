@@ -44,6 +44,18 @@ export default function TabsLayout() {
       }}
       />
 
+    <Tabs.Screen 
+      name = "Unused"
+      options={{
+        headerTitle: "My Unused Orders", 
+        tabBarIcon: ({focused, color}) =>
+           <Ionicons 
+              name = {focused ? "archive":"archive-outline"}
+              color = {color}
+              size = {20}/>,
+      }}
+      />
+
     </Tabs>
   );
 }
