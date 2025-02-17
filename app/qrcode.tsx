@@ -9,6 +9,13 @@ import {database} from '@/firebaseConfig';
 
 export default function qrCode() {
 
+    const changePage = () => {
+      router.push({
+        pathname: "/(tabs)/card",
+        params: {id: id}
+      }); 
+    };
+
     const { id } = useLocalSearchParams();
     const router = useRouter(); 
 
@@ -38,14 +45,25 @@ export default function qrCode() {
   useEffect(() => {
     storeOrder();
   }, []); // Empty dependency array means it runs only once after the initial render
-    return (
+    return <>(
             <View style={{ alignItems: "center", justifyContent: "center", margin: 20 }}>
               <QRCode value={JSON.stringify(orderData)} size={300} />
             </View>
-    )
+
+                    
+            <View style={styles.buttonContainer}>
+              <Button label="Back To Home" theme="primary" onPress={changePage} />
+            </View>
+                    
+    )</>
 
 } 
 
-const Styles = StyleSheet.create({
-
+const styles = StyleSheet.create({
+  buttonContainer: {
+          position: "absolute",
+          bottom: 40,
+          left: 20,
+          right: 20,
+  }
 })

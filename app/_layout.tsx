@@ -50,6 +50,9 @@ export default function RootLayout() {
           backgroundColor: "#25292e",
         }, 
         headerTintColor: "#fff",
+        gestureEnabled: false,
+        headerBackVisible: false, // Hides the back button
+        headerLeft: () => null, // Ensures there's no left-side button
       }}
       />
     
