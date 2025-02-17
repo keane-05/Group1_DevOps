@@ -34,7 +34,7 @@ export default function Info() {
       {/* Drink Info Section */}
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{drink.name}</Text>
-        <Text style={styles.description}>{drink.descripion}</Text>
+        <Text style={styles.description}>{drink.description}</Text>
         <Text style={styles.price}>{drink.price}</Text>
         <Text style={styles.stock}>Stock: {drink.stock}</Text>
       </View>
