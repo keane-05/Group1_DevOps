@@ -10,7 +10,7 @@ import {database} from '@/firebaseConfig';
 export default function qrCode() {
 
     const changePage = () => {
-      router.push({
+      router.replace({
         pathname: "/card",
         params: {id: id}
       }); 

@@ -10,7 +10,7 @@ import Stripe from "stripe";
 const stripe = Stripe(SECRET_KEY, { apiVersion: "2025-01-27.acacia" });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://172.23.13.124:${port}`);
+  console.log(`Example app listening at http://192.168.1.16:${port}`);
 });
 
 app.post ("/create-payment-intent", async (req, res) => {

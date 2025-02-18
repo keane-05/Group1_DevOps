@@ -4,11 +4,18 @@ import { CardField, useConfirmPayment } from "@stripe/stripe-react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
 //ADD localhost address of your server
-const API_URL = "http://172.23.35.208:3000";
+const API_URL = "http://192.168.1.16:3000";
 
 const StripeApp = props => {
   const [email, setEmail] = useState();
-  const [cardDetails, setCardDetails] = useState();
+  const [cardDetails, setCardDetails] = useState({
+    complete: false,  // Default value to avoid undefined/null
+    number: "",
+    expiryMonth: "",
+    expiryYear: "",
+    cvc: "",
+    postalCode: "",
+  });
   const { confirmPayment, loading } = useConfirmPayment();
 const { id } = useLocalSearchParams();
                 const router = useRouter(); 
@@ -79,7 +86,11 @@ const { id } = useLocalSearchParams();
         cardStyle={styles.card}
         style={styles.cardContainer}
         onCardChange={cardDetails => {
+          console.log(cardDetails);  // Log the cardDetails
           setCardDetails(cardDetails);
+        }}
+        onBlur={() => {
+          Keyboard.dismiss();  // Dismiss the keyboard when CardField loses focus
         }}
       />
       <Button onPress={handlePayPress} title="Pay" disabled={loading} />
