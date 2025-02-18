@@ -12,12 +12,18 @@ export default function RootLayout() {
       name ="(tabs)"
       options={{
         headerShown: false, 
+        gestureEnabled: false,  // Disables swipe back gestures
       }}
       
       />
       <Stack.Screen
-      name = "+not-found" 
-      options={{}}
+      name = "index" 
+      options={{        
+        headerTitle: "", 
+        headerStyle: {
+          backgroundColor: "#25292e",
+        }, 
+        headerTintColor: "#fff",}}
       />
 
       <Stack.Screen
@@ -50,9 +56,9 @@ export default function RootLayout() {
           backgroundColor: "#25292e",
         }, 
         headerTintColor: "#fff",
-        gestureEnabled: false,
-        headerBackVisible: false, // Hides the back button
-        headerLeft: () => null, // Ensures there's no left-side button
+        headerLeft: () => null, // Removes the back button
+        gestureEnabled: false,  // Disables swipe back gestures
+        headerBackVisible: false
       }}
       />
     
