@@ -55,7 +55,6 @@ export default function TabsLayout() {
               size = {20}/>,
       }}
       />
-
     </Tabs>
   );
 }

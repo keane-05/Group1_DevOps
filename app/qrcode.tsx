@@ -11,7 +11,7 @@ export default function qrCode() {
 
     const changePage = () => {
       router.push({
-        pathname: "/(tabs)/card",
+        pathname: "/card",
         params: {id: id}
       }); 
     };
