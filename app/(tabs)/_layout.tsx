@@ -24,21 +24,10 @@ export default function TabsLayout() {
       name = "card"
       options={{
         headerTitle: "Card", 
+        
         tabBarIcon: ({focused, color}) =>
            <Ionicons 
               name = {focused ? "card":"card-outline"}
-              color = {color}
-              size = {20}/>,
-      }}
-      />
-
-    <Tabs.Screen 
-      name = "about"
-      options={{
-        headerTitle: "About", 
-        tabBarIcon: ({focused, color}) =>
-           <Ionicons 
-              name = {focused ? "information-circle":"information-circle-outline"}
               color = {color}
               size = {20}/>,
       }}
